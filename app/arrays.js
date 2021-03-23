@@ -4,6 +4,10 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+
+movedElement= arr. shift()
+addedElement= arr.push(movedElement)
+    return arr
 }
 
 
@@ -12,12 +16,23 @@ function rearranger(arr) {
 
 // 2. Given an array of numbers, return the largest number in the array.
 // Example:
-// input: [6, 4, 8, 33, 42, 10]
+// input: [6, 4, 8, 33, 42, 42, 10]
 // output: 42
 
 function largestNum(arr) {
+
+
+largestNumber= Math.max(...arr)
+
+let newArray=arr.filter(number=>number==largestNumber)
+
+if(newArray.length > 1){
+return {largestNumber:newArray.length}
 }
 
+return largestNumber
+
+}
 
 // ------------------------------------------
 
@@ -28,6 +43,7 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    return arr.map(x => x * arr.length)
 }
 
 
@@ -61,8 +77,17 @@ let flights = [{
 }]
 
 
+
+
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
+
+    let found=flights.find(flight=> flight.to==destination.toUpperCase())
+
+    if(firstClass==true){
+        return found.prices.firstClass
+    }
+    return found.prices.standard
 
 }
 
@@ -84,7 +109,14 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
+    let found=staff.find(user=> user.name==Id)
 
+    if(id==){
+        return found.name
+    }else{
+        return { error:"No user with that id"}
+    }
+    return found.name
 }
 
 
