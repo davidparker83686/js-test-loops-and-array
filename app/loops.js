@@ -13,10 +13,6 @@ function factorials(num) {
   }
   return total
 
-
-
-
-
 }
 
 // ------------------------------------------
@@ -28,6 +24,11 @@ function factorials(num) {
 
 function rangeTotal(n1, n2) {
 
+  total=0
+  for (let i = n1; i <=n2; i++) {
+    total += i
+  }
+  return total
 }
 
 // ------------------------------------------
@@ -41,4 +42,13 @@ function rangeTotal(n1, n2) {
 
 function rangeDivisor(start, end, divisor) {
 
+
+  total=0
+
+  for (let i = start; i <=end; i++) {
+   if(i%divisor==0){
+     total++
+   }
+  }
+  return total
 }
